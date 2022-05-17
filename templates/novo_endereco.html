@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2 style="text-align: center;">Adicionar Endereço</h2>
+<hr>
+{%- for mensagem in get_flashed_messages()  %}
+	<div class="alert alert-danger">
+		{{mensagem}}
+	</div>
+{%- endfor %}
+<form action="{{url_for('cria_endereco')}}" method="POST" class="form-control">
+	<label>Rua</label>
+	<input class="form-control" type="text" name="rua" placeholder="Nome da Rua" required>
+	<label>Número</label>
+	<input class="form-control" type="text" name="numero" placeholder="numero" required>
+	<label>Complemento</label>
+	<input class="form-control" type="text" name="complemento" placeholder="complemento" required>
+	<label>CEP</label>
+	<input class="form-control" type="text" name="cep" placeholder="cep" required >
+    <label>Bairro</label>
+	<input class="form-control" type="text" name="bairro" placeholder="bairro" required >
+    <label>Cidade</label>
+	<input class="form-control" type="text" name="cidade" placeholder="cidade" required >
+    <label>Estado</label>
+	<input class="form-control" type="text" name="estado" placeholder="estado" required >
+
+	<button class="btn btn-success">Adicionar</button>
+</form>
+{% endblock conteudo %}
